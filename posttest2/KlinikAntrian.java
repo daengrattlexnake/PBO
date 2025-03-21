@@ -7,7 +7,7 @@ public class KlinikAntrian {
     
     public static void main(String[] args) {
         while (true) {
-            System.out.println("\n=== Data Sistem Pendaftaran Antrian Klinik ===");
+            System.out.println("\n=== Sistem Pendaftaran Antrian Klinik ===");
             System.out.println("1. Tambah Pasien");
             System.out.println("2. Lihat Daftar Pasien");
             System.out.println("3. Ubah Data Pasien");
@@ -76,15 +76,16 @@ public class KlinikAntrian {
             return;
         }
         
+        Pasien pasien = daftarPasien.get(index);
+        
         System.out.print("Masukkan nama baru: ");
-        String nama = scanner.nextLine();
+        pasien.setNama(scanner.nextLine());
         System.out.print("Masukkan umur baru: ");
-        int umur = scanner.nextInt();
+        pasien.setUmur(scanner.nextInt());
         scanner.nextLine();
         System.out.print("Masukkan keluhan baru: ");
-        String keluhan = scanner.nextLine();
+        pasien.setKeluhan(scanner.nextLine());
         
-        daftarPasien.set(index, new Pasien(nama, umur, keluhan));
         System.out.println("Data pasien berhasil diubah!");
     }
     
